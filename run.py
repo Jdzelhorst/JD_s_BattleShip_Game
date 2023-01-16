@@ -1,32 +1,30 @@
 # Imports
-from random import randint
-import os
+import random
 
-#Standard settings
-board_size = 8
-row_size, col_size = 8
-num_ships = 5
-num_turns = 20 
 
-def change_settings():
-    #The user can change the settings here
-    row_size = int(input("How many rows do you prefer? (1-10) "))
-    return row_size
-    col_size = int(input("How many columns do you prefer? (1-10) "))
-    return col_size
+def adjust_settings():
+    # The user can change the settings here
+    board_size = int(input("what must be the size of the board?(1-10)"))
+    return board_size
     num_ships = int(input("How many ships do you prefer? (1-10) "))
     return num_ships
-    num_turns = int(input("In how many turns will you destroy these ships? (1-10) "))
+    num_turns = int(input("In how many turns do you prefer?"))
     return num_turns
 
-#Playing Board
-game_board(board_size) = [["O"] * col_size for _ in range(row_size)]
-for board in game_board:
-    print(*board)
 
-#Ships
+# Standard settings
 
-def build_ship(board_size):
+
+board_size = []
+row_size = board_size
+col_size = board_size
+num_ships = []
+num_turns = []
+
+# Ships
+
+
+def build_ship(num_ships):
     # Length of ship is random number between 2 and length of board
     len_ship = random.randint(2, board_size)
     orientation = random.randint(0, 1)
@@ -34,7 +32,7 @@ def build_ship(board_size):
     if orientation == 0:
         # Randomly select row and create list of selected row * length of ship
         row_ship = [random.randint(0, board_size - 1)] * len_ship
-        # Randomly select column of first position of ship (Hence subtracting length of ship)
+        # Randomly select column of first position of ship
         col = random.randint(0, board_size - len_ship)
         # Create list of column values
         col_ship = list(range(col, col + len_ship))
@@ -42,17 +40,38 @@ def build_ship(board_size):
         coords = tuple(zip(row_ship, col_ship))
     else:
         # Same as above except switch column and row
-        col_ship = [random.randint(0, dims - 1)] * len_ship
+        col_ship = [random.randint(0, board_size - 1)] * len_ship
         row = random.randint(0, board_size - len_ship)
         row_ship = list(range(row, row + len_ship))
         coords = tuple(zip(row_ship, col_ship))
     return list(coords)
 
-#Welcome message
+# Welcome message
+
+
 def welcome_message():
     print("Welcome to JD's Battleship!")
-    print("There are multiple battleships hidden in this board. Enter your row and column guesses to sink it!")
+    print("There are multiple battleships hidden in this board.")
+    print("Enter your row and column guesses to sink it!")
 
-#Game Start
 
-#Game End
+def main():
+    game_board = [["O"] * col_size for _ in range(row_size)]
+
+    welcome_message()
+
+    adjust_settings()
+
+    build_ship(num_ships)
+
+    for board in game_board:
+        print(*board)
+
+# Game Start
+
+
+main()
+
+# Playing Board
+
+# Game End
