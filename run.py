@@ -15,11 +15,6 @@ def adjust_settings():
 # Standard settings
 
 
-board_size = []
-row_size = board_size
-col_size = board_size
-num_ships = []
-num_turns = []
 
 # Ships
 
@@ -56,19 +51,27 @@ def welcome_message():
 
 
 def main():
-    game_board = [["O"] * col_size for _ in range(row_size)]
-
+  
+    board_size = []
+    row_size = board_size
+    col_size = board_size
+    num_ships = []
+    num_turns = []
+    
     welcome_message()
 
     adjust_settings()
 
+    game_board = [["O"] * col_size for _ in range(row_size)]
+
     build_ship(num_ships)
+
+
 
     for board in game_board:
         print(*board)
 
 # Game Start
-
 
 main()
 
