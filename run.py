@@ -5,15 +5,34 @@ board_size = int(0)
 row_size = board_size
 col_size = board_size
 
+print("Welcome to JD's Battleship!")
+print("Select the difficulty you want to play")
+print("2 is the easiest and 10 is the hardest")
+while True:
+    """
+    Here the user can choose the difficulty of the game.
+    The difficulty is equal to the size of the board.
+    That's why the variable is called board_size.
+    """
+    board_size = int(input("What difficulty do you choose?(2-10)"))
+    if board_size >1 and board_size <=10:
+        print(f"Great, you have chosen {board_size} as difficulty")
+        break
+    else:
+        print("You need to enter a difficulty between 2 and 10")
+        continue
 
-    # Welcome message
 def welcome_message():
+    """
+    The welcome message of the game.
+    Only shows after the user adjusted the settings.
+    """
     print("Welcome to JD's Battleship!")
     print("There are multiple battleships hidden in this board.")
     print("Enter your row and column guesses to sink it!")
     # build_ship(num_ships)
+
     
-    board_size = int(input("what must be the size of the board?(1-10)"))
     if board_size in range(1, 11):
         return board_size
 
@@ -81,7 +100,6 @@ def main():
 
 # Game Start
 
-main()
 
 # Playing Board
 
