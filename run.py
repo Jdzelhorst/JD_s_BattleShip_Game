@@ -1,5 +1,6 @@
 # Imports
 import random
+import os
 
 board_size = int(0)
 row_size = board_size
@@ -17,12 +18,13 @@ while True:
     number of tries the user has to win the game
     """
     board_size = int(input("What difficulty do you choose?(2-10)"))
-    if board_size >1 and board_size <=10:
-        print(f"Great, you have chosen {board_size} as difficulty, good luck!")
+    if board_size > 1 and board_size <= 10:
+        print(f"You have chosen {board_size} as difficulty, good luck!")
         break
     else:
         print("You need to enter a difficulty between 2 and 10")
         continue
+
 
 def welcome_message():
     """
@@ -48,15 +50,16 @@ def welcome_message():
     # else:
     #     print("Your answer needs to be 10 and 20 turns!")
 
+
 def build_board():
-    # The user can change the settings here
-    game_board = [["O"] * col_size for _ in range(row_size)]
+    """
+    The board will be created here.
+    It's based on the difficulty given by the user at the start of the game.
+    """
+    game_board = [["O"] * board_size for _ in range(board_size)]
 
-    for board in game_board:
-        print(*board)
-# Standard settings
-
-
+    # for board in game_board:
+    #     print(*board)
 
 
 # Ships
