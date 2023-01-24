@@ -46,7 +46,7 @@ def welcome_message():
     Only shows after the user adjusted the settings.
     """
     print("Welcome to JD's Battleship!")
-    print("There are multiple battleships hidden in this board.")
+    print(f"There are {num_ships} battleships hidden in this board.")
     print("Insert the coordinates you think an enemy ship is hiding.")
 
 
@@ -69,14 +69,12 @@ def build_board():
         row_number += 1
 
 
-# Ships
-
-
 def build_ship():
     """
     The ships will be made here.
     The amount of ships is based on the difficulty chosen by the user.
-    The idea is to make ships with a minimal lenght of 2, either horizontal or vertical.
+    The idea is to make ships with a minimal lenght of 2,
+    either horizontal or vertical.
     """
     ships_build = 0
     while ships_build != num_ships:
@@ -88,31 +86,28 @@ def build_ship():
             col_ship = list(range(col, col + len_ship))
             location = (row_ship, col_ship)
             ship_placement.append(location)
-            ships_build +=1
+            ships_build += 1
         else:
             col_ship = [random.randint(0, board_size - 1)] * len_ship
             row = random.randint(0, board_size - len_ship)
             row_ship = list(range(row, row + len_ship))
             location = (row_ship, col_ship)
             ship_placement.append(location)
-            ships_build +=1
+            ships_build += 1
 
 
+def user_guess():
+    """
+    This function is for the guesses to be made by the user.
+    The idea is for the user to put coordinates in the terminal,
+    to shoot at the created ships.
+    """
+    
 
 def main():
     os.system('clear')
     welcome_message()
-    
-    
-    
     build_board()
+    build_ship()
 
-
-
-
-# Game Start
-
-
-# Playing Board
-
-# Game End
+main()
