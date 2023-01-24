@@ -1,18 +1,48 @@
 # Imports
 import random
 
+def main():
+    welcome_message()
+    build_board()
+    
+    # build_ship(num_ships)
+    
+    # for board in game_board:
+    #     print(*board)
 
-def adjust_settings():
+def welcome_message():
+    print("Welcome to JD's Battleship!")
+    print("There are multiple battleships hidden in this board.")
+    print("Enter your row and column guesses to sink it!")
+
+def build_board():
     # The user can change the settings here
     board_size = int(input("what must be the size of the board?(1-10)"))
-    return board_size
+    if board_size in range(1, 11):
+        return board_size
+    else:
+        print("Your answer needs to be between 1 and 10")
+
     num_ships = int(input("How many ships do you prefer? (1-10) "))
-    return num_ships
+    if num_ships in range(1, 11):
+        return num_ships
+    else:
+        print("Your answer needs to be between 1 and 10 ships!")
+        
     num_turns = int(input("In how many turns do you prefer?"))
-    return num_turns
+    if num_turns in range(10, 21):
+        return num_turns
+    else:
+        print("Your answer needs to be 10 and 20 turns!")
 
+    row_size = board_size
+    col_size = board_size
+    game_board = [["O"] * col_size for _ in range(row_size)]
 
+    for board in game_board:
+        print(*board)
 # Standard settings
+
 
 
 
@@ -44,32 +74,9 @@ def build_ship(num_ships):
 # Welcome message
 
 
-def welcome_message():
-    print("Welcome to JD's Battleship!")
-    print("There are multiple battleships hidden in this board.")
-    print("Enter your row and column guesses to sink it!")
-
-
-def main():
-  
-    board_size = []
-    row_size = board_size
-    col_size = board_size
-    num_ships = []
-    num_turns = []
-    
-    welcome_message()
-
-    adjust_settings()
-
-    game_board = [["O"] * col_size for _ in range(row_size)]
-
-    build_ship(num_ships)
 
 
 
-    for board in game_board:
-        print(*board)
 
 # Game Start
 
