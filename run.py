@@ -12,11 +12,13 @@ while True:
     """
     Here the user can choose the difficulty of the game.
     The difficulty is equal to the size of the board.
-    That's why the variable is called board_size.
+    That's why the input variable is called board_size.
+    The size of the board also has inpact on the amount of ships and
+    number of tries the user has to win the game
     """
     board_size = int(input("What difficulty do you choose?(2-10)"))
     if board_size >1 and board_size <=10:
-        print(f"Great, you have chosen {board_size} as difficulty")
+        print(f"Great, you have chosen {board_size} as difficulty, good luck!")
         break
     else:
         print("You need to enter a difficulty between 2 and 10")
@@ -29,26 +31,22 @@ def welcome_message():
     """
     print("Welcome to JD's Battleship!")
     print("There are multiple battleships hidden in this board.")
-    print("Enter your row and column guesses to sink it!")
-    # build_ship(num_ships)
+    print("Insert the coordinates you think an enemy ship is hiding.")
 
-    
-    if board_size in range(1, 11):
-        return board_size
+    # if board_size in range(1, 11):
+    #     return board_size
 
-    num_ships = int(input("How many ships do you prefer? (1-10) "))
-    if num_ships in range(1, 11):
-        return num_ships
-    else:
-        print("Your answer needs to be between 1 and 10 ships!")
+    # num_ships = int(input("How many ships do you prefer? (1-10) "))
+    # if num_ships in range(1, 11):
+    #     return num_ships
+    # else:
+    #     print("Your answer needs to be between 1 and 10 ships!")
 
-    num_turns = int(input("In how many turns do you prefer?"))
-    if num_turns in range(10, 21):
-        return num_turns
-    else:
-        print("Your answer needs to be 10 and 20 turns!")
-
-
+    # num_turns = int(input("In how many turns do you prefer?"))
+    # if num_turns in range(10, 21):
+    #     return num_turns
+    # else:
+    #     print("Your answer needs to be 10 and 20 turns!")
 
 def build_board():
     # The user can change the settings here
