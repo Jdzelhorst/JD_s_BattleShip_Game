@@ -184,10 +184,17 @@ def making_guesses():
 
 
 def main():
+    choose_difficulty()
     os.system('clear')
     welcome_message()
+    justifying_board_size()
     build_board()
     build_ship()
+    # print(ship_placement)
+    """
+    Uncomment to see the ship location (used for testing)
+    """
+    making_guesses()
 
 
 main()
