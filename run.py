@@ -83,27 +83,17 @@ def build_ship():
     """
     The ships will be made here.
     The amount of ships is based on the difficulty chosen by the user.
-    The idea is to make ships with a minimal lenght of 2,
-    either horizontal or vertical.
+    The idea is to make 1x1 ships on random coordinates
+    A future idea is to make the ships longer
+    and to be orientated horizontally or vertically
     """
     ships_build = 0
     while ships_build != num_ships:
-        len_ship = random.randint(1, board_size - 4)
-        orientation = random.randint(0, 1)
-        if orientation == 0:
-            row_ship = [random.randint(0, board_size - 1)] * len_ship
-            col = random.randint(0, board_size - len_ship)
-            col_ship = list(range(col, col + len_ship))
-            location = (row_ship, col_ship)
-            ship_placement.append(location)
-            ships_build += 1
-        else:
-            col_ship = [random.randint(0, board_size - 1)] * len_ship
-            row = random.randint(0, board_size - len_ship)
-            row_ship = list(range(row, row + len_ship))
-            location = (row_ship, col_ship)
-            ship_placement.append(location)
-            ships_build += 1
+        ship_row = random.randint(1, (board_size))
+        ship_col = random.randint(1, (board_size))
+        location = [ship_row, ship_col]
+        ship_placement.append(location)
+        ships_build += 1
 
 
 def user_guess():
