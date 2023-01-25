@@ -3,8 +3,6 @@ import random
 import os
 
 board_size = int(0)
-row_size = board_size
-col_size = board_size
 board = []
 ship_placement = []
 
@@ -102,12 +100,13 @@ def user_guess():
     The idea is for the user to put coordinates in the terminal,
     to shoot at the created ships.
     """
-    
+
 
 def main():
     os.system('clear')
     welcome_message()
     build_board()
     build_ship()
+
 
 main()
