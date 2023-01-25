@@ -96,12 +96,91 @@ def build_ship():
         ships_build += 1
 
 
-def user_guess():
+def making_guesses():
     """
-    This function is for the guesses to be made by the user.
-    The idea is for the user to put coordinates in the terminal,
-    to shoot at the created ships.
+    This function will take input from the user.
+    Check the input against the placement of this ships.
+    Record the guess and give output through the terminal.
+    Changes the board according to hit or miss.
     """
+    global attempts
+    ships_hit = 0
+    for attempts in range((num_ships * 2)):
+        shots = int((num_ships * 2))
+        print(" ")
+        print(f"           You have {shots - attempts} attempts left")
+        print(f"           There are {len(ship_placement)} ships left ")
+        guess_row = None
+        while True:
+            guess_row = input("            Enter a row number: ")
+            if guess_row.isdigit():
+                guess_row = int(guess_row)
+                break
+            else:
+                build_board()
+                print("No can do! Try a number shown on the left of the grid")
+                continue
+        guess_col = None
+        while True:
+            guess_col = input("            Enter column letter: ")
+            if guess_col.isalpha() and len(guess_col) == 1:
+                guess_col = guess_col.lower()
+                guess_col = ord(guess_col) - 96
+                break
+            else:
+                build_board()
+                print(" That's not possible, try a coordinate within the grid")
+                continue
+        guess = [guess_row, guess_col]
+        if guess in ship_placement:
+            os.system('clear')
+            print("*******************************************************")
+            print("             You hit a ship!")
+            print("_______________________________________________________")
+            board[guess_row - 1][guess_col - 1] = "X"
+            ship_placement.remove(guess)
+            ships_hit += 1
+        elif (attempts + 1) - shots == 0:
+            os.system('clear')
+            print("*******************************************************")
+            print("              You are out of ammo!")
+            print("                  Game Over...")
+            print("_______________________________________________________")
+        elif (guess_row < 1 or guess_row > board_size):
+            os.system('clear')
+            print("*******************************************************")
+            print("That's not possible, try a coordinate within the grid")
+            print("_______________________________________________________")
+        elif (guess_col < 1 or guess_col > board_size):
+            os.system('clear')
+            print("*******************************************************")
+            print("That's not possible, try a coordinate within the grid")
+            print("_______________________________________________________")
+        elif (board[guess_row - 1][guess_col - 1]) == "X":
+            os.system('clear')
+            print("*******************************************************")
+            print("         You guessed that one already...")
+            print("_______________________________________________________")
+        elif (board[guess_row - 1][guess_col - 1]) == "-":
+            os.system('clear')
+            print("*******************************************************")
+            print("         You guessed that one already...")
+            print("_______________________________________________________")
+        else:
+            os.system('clear')
+            print("*******************************************************")
+            print("               You missed! Try again!")
+            print("_______________________________________________________")
+            board[guess_row - 1][guess_col - 1] = "-"
+        if ships_hit == num_ships:
+            os.system('clear')
+            build_board()
+            print("*******************************************************")
+            print("   Congratulations, you have hit all the ships!")
+            print("_______________________________________________________")
+            break
+        build_board()
+    attempts += 1
 
 
 def main():
