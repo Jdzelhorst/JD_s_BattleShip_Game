@@ -1,6 +1,7 @@
 # Imports
 import random
 import os
+import sys
 
 board_size = int(0)
 board = []
@@ -197,4 +198,23 @@ def main():
     making_guesses()
 
 
+def restart_game():
+    print(" ")
+    print(" ")
+    print("           The Game is over!")
+    while True:
+        play_again = input("     Do you want to play again? y/n: ")
+        if play_again == "y":
+            os.execv(sys.executable, [sys.executable] + sys.argv)
+            break
+        elif play_again == "n":
+            print("Okay, your choice! See you again soon!")
+            sys.exit()
+            break
+        else:
+            print("     Invalid answer, answer with y or n")
+            continue
+
+
 main()
+restart_game()
