@@ -6,10 +6,7 @@ board_size = int(0)
 board = []
 ship_placement = []
 
-print("Welcome to JD's Battleship!")
-print("Select the difficulty you want to play")
-print("1 is the easiest and 3 is the hardest")
-while True:
+def choose_difficulty():
     """
     Here the user can choose the difficulty of the game.
     The difficulty is equal to the size of the board.
@@ -17,25 +14,32 @@ while True:
     The size of the board also has inpact on the amount of ships and
     number of tries the user has to win the game
     """
-    difficulty = int(input("What difficulty do you choose?(1-10)"))
-    if difficulty == 1:
-        board_size = int(3)
-        num_ships = int(1)
-        print(f"You have chosen {difficulty} as difficulty, good luck!")
-        break
-    elif difficulty == 2:
-        board_size = int(6)
-        num_ships = int(3)
-        print(f"You have chosen {difficulty} as difficulty, good luck!")
-        break
-    elif difficulty == 3:
-        board_size = int(10)
-        num_ships = int(5)
-        print(f"You have chosen {difficulty} as difficulty, good luck!")
-        break
-    else:
-        print("You need to enter a difficulty between 2 and 10")
-        continue
+    os.system('clear')
+    print("           Welcome to JD's Battleship!")
+    print("     Select the difficulty you want to play")
+    print("    1 is easy, 2 is normal and 3 is for hard")
+    global board_size
+    global num_ships
+    while True:
+        difficulty = int(input("     What difficulty do you choose?(1-3): "))
+        if difficulty == 1:
+            board_size = int(3)
+            num_ships = int(2)
+            print(f"You have chosen {difficulty} as difficulty, good luck!")
+            break
+        elif difficulty == 2:
+            board_size = int(6)
+            num_ships = int(8)
+            print(f"You have chosen {difficulty} as difficulty, good luck!")
+            break
+        elif difficulty == 3:
+            board_size = int(10)
+            num_ships = int(15)
+            print(f"You have chosen {difficulty} as difficulty, good luck!")
+            break
+        else:
+            print("You need to enter a difficulty between 1 and 3")
+            continue
 
 
 def welcome_message():
