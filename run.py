@@ -6,6 +6,7 @@ board_size = int(0)
 board = []
 ship_placement = []
 
+
 def choose_difficulty():
     """
     Here the user can choose the difficulty of the game.
@@ -47,9 +48,9 @@ def welcome_message():
     The welcome message of the game.
     Only shows after the user adjusted the settings.
     """
-    print("Welcome to JD's Battleship!")
-    print(f"There are {num_ships} battleships hidden in this board.")
-    print("Insert the coordinates you think an enemy ship is hiding.")
+    print("           Welcome to JD's Battleship!")
+    print("  There are multiple battleships hidden in this board.")
+    print(" Insert the coordinates you think an enemy ship is hiding.")
 
 
 def build_board():
