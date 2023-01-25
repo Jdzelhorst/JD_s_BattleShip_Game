@@ -199,12 +199,17 @@ def main():
 
 
 def restart_game():
+    """
+    This function gives the user the option to play the game again.
+    """
     print(" ")
     print(" ")
     print("           The Game is over!")
     while True:
         play_again = input("     Do you want to play again? y/n: ")
         if play_again == "y":
+            # The code below was taken from Stackoverflow. 
+            # See the readme for more information.
             os.execv(sys.executable, [sys.executable] + sys.argv)
             break
         elif play_again == "n":
@@ -216,5 +221,18 @@ def restart_game():
             continue
 
 
+"""
+Below here are all the variables used througout the multiple functions
+"""
+board_size = int()
+num_ships = int()
+attempts = int()
+board = []
+ships_build = []
+ship_placement = []
+
+"""
+Calling the needed functions below
+"""
 main()
 restart_game()
