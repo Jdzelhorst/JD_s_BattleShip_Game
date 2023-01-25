@@ -208,7 +208,7 @@ def restart_game():
     while True:
         play_again = input("     Do you want to play again? y/n: ")
         if play_again == "y":
-            # The code below was taken from Stackoverflow. 
+            # The code below was taken from Stackoverflow.
             # See the readme for more information.
             os.execv(sys.executable, [sys.executable] + sys.argv)
             break
