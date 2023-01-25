@@ -53,22 +53,29 @@ def welcome_message():
     print(" Insert the coordinates you think an enemy ship is hiding.")
 
 
+def justifying_board_size():
+    """
+    This function is needed to stop the board from multiplying during the game
+    """
+    for x in range(board_size):
+        board.append([" "] * board_size)
+    return board_size
+
+
 def build_board():
     """
     Creates the board and prints it.
     """
-    for x in range(board_size):
-        board.append([" "] * board_size)
-
+    global alphabet
     alphabet = "abcdefghijklmnopqrstuvwxyz".upper()
     column_letters = alphabet[0: (board_size)]
-    print("      %s%s" % (" ", " ".join(column_letters)))
+    print("                 %s%s" % (" ", " ".join(column_letters)))
     row_number = 1
     for row in board:
         if row_number <= 9:
-            print("     %d|%s|" % (row_number, "|".join(row)))
+            print("                %d|%s|" % (row_number, "|".join(row)))
         else:
-            print("    %d|%s|" % (row_number, "|".join(row)))
+            print("               %d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
 
