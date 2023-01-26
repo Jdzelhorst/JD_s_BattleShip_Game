@@ -123,15 +123,17 @@ It's a nice time killing minigame based on sheer luck
 
 ### Validator and Github errors
 
-- __Validator__
-  - The [pep8ci](https://pep8ci.herokuapp.com/) gave no errors in my code.
+#### Validator
 
-- __Github errors__
-  - I changed the Linter in github after reading a tip in the project-portfolio-3 channel in Slack:
-    - Searching "Python: Select Linter" in the Command Palette.
-    - Chose the Flake8 linter.
+- The [pep8ci](https://pep8ci.herokuapp.com/) gave no errors in my code.
+
+#### Github errors
+
+- I changed the Linter in github after reading a tip in the project-portfolio-3 channel in Slack:
+- Searching "Python: Select Linter" in the Command Palette.
+  - Chose the Flake8 linter.
   - This way I didn't get errors for not having uppercase variables.
-  - There are no errors or warnings in my run.py file.
+- There are no errors or warnings in my run.py file.
 
 ### Bugs
 
@@ -139,16 +141,20 @@ It's a nice time killing minigame based on sheer luck
 
 - Fixed a bug where board_size was called before being referenced.
 - Fixed a bug where num_ships was called before being referenced.
-- 
+- Fixed a bug where the game ends to quickly; before the attempts are less than the amount of ships left.
 
 #### Unfixed Bugs
 
 - Some ships have the same generated coordinates.
-- The game sometimes ends to quickly; before the attempts are less than the amount of ships left.
 - The print commands do not line up neat in relation to the board. (not really a bug, more a personal flaw)
-
 
 ## Credits
 
 - Changing the pylint in github [tip](https://code-institute-room.slack.com/archives/C027C3S3TEU/p1631013285037400?thread_ts=1631012358.036500&cid=C027C3S3TEU)
-
+- Battleships by AVTpepper Github [repository](https://github.com/AVTpepper/Battleships)
+  - Big thank you to AVTpepper! He has created whay I had in my mind in the first place.
+- Python for Beginners: [Battleship](https://bigmonty12.github.io/battleship) by Austin Montgomery.
+  - Austin gave me a different view on the game, mostly how simple it could be.
+- Battleship Game Code in Python - by Panjal Dev [link](https://copyassignment.com/battleship-game-code-in-python/)
+  - I tried the ship-class idea to make multiple ships, but couldn't get it to work
+- The [Stackoverflow](https://stackoverflow.com/questions/72831995/os-execvsys-executable-uses-wrong-python-version) tip I used to reset the game in the play again function
