@@ -42,7 +42,7 @@ It's a nice time killing minigame based on sheer luck
 ![Level_3_difficulty](assets/images/level_3_sc.png)
 
 - __Inserting Invalid Coordinates__
-  - If the user inserts an invalid difficulty value (anything else than 1, 2 or 3), 
+  - If the user inserts an invalid difficulty value (anything else than 1, 2 or 3),
   - the program will ask the user to insert a valid difficulty
 
 ![Invalid_difficulty](assets/images/invalid_difficulty_sc.png)
@@ -95,3 +95,29 @@ It's a nice time killing minigame based on sheer luck
   - If the user inserts "n" the program will shut down.
 
 ![Play_again](assets/images/play_again_sc.png)
+
+### Future features
+
+- __Longer and Orientated Ships__
+  The original plan was to make multiple classes of ships with various lenghts.
+  I wasn't able to implement it; it kept crashing and giving errors.
+  Most likely due to the fact that I made a list of generated ships that couldn't be accessed by the guessing coordinates list.
+  For difficulty 1 I want one 1x1 ship and one 1x2 ship.
+  For difficulty 2 I want one 1x2 ship, one 1x3 ship and one 1x4 ship.
+  For difficulty 3 I want two 1x2 ships, two 1x3 ships and two 1x4.
+  The coordinate guessing would then be less based on luck, seeing as some hits can be adjacent to each other.
+  The attempts can be less, seeing as it isn't only luck.
+
+- __Give the Computer a Chance to Shoot Back__
+  I want the computer to also shoot back at the user.
+  Right now the game can only end in 2 ways:
+    The user has no attempts left (loses)
+    The user hits all ships (wins)
+  
+  If the computer can fight back, it could beat the player in guessing.
+  This way the game can end in a win, a draw, or a loss for the player.
+
+- __A Scoring Board__
+  If the computer can fight back and the game can end in a win, a draw or a loss,
+  we can also implement a scoring board. Counting every win, draw or loss by the player and computer.
+
