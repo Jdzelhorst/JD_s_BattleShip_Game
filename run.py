@@ -36,7 +36,7 @@ def choose_difficulty():
             break
         elif difficulty == 3:
             board_size = int(10)
-            num_ships = int(15)
+            num_ships = int(16)
             print(f"You have chosen {difficulty} as difficulty, good luck!")
             break
         else:
@@ -107,9 +107,9 @@ def making_guesses():
     global attempts
     ships_hit = 0
     for attempts in range((num_ships * 2)):
-        tries = int((num_ships * 3))
+        tries = (num_ships * 2.5)
         print(" ")
-        print(f"            You have {tries - attempts} attempts left")
+        print(f"            You have {int(tries - attempts)} attempts left")
         print(f"            There are {len(ship_placement)} ships left ")
         guess_row = None
         while True:
