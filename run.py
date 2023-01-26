@@ -102,8 +102,8 @@ def making_guesses():
     """
     global attempts
     ships_hit = 0
-    for attempts in range((num_ships * 2)):
-        tries = (num_ships * 2.5)
+    tries = (num_ships * 2.5)
+    for attempts in range(int(tries)):
         print(" ")
         print(f"            You have {int(tries - attempts)} attempts left")
         print(f"            There are {len(ship_placement)} ships left ")
