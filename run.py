@@ -3,10 +3,6 @@ import random
 import os
 import sys
 
-board_size = int(0)
-board = []
-ship_placement = []
-
 
 def choose_difficulty():
     """
