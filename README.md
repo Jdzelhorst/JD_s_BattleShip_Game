@@ -7,8 +7,6 @@ It's a nice time killing minigame based on sheer luck
 
 ![Responsive Mockup](assets/images/p3_mock_up.png)
 
-## How to play
-
 ## Features
 
 ### Existing features
@@ -120,4 +118,37 @@ It's a nice time killing minigame based on sheer luck
 - __A Scoring Board__
   - If the computer can fight back and the game can end in a win, a draw or a loss,
   - we can also implement a scoring board. Counting every win, draw or loss by the player and computer.
+
+## Testing
+
+### Validator and Github errors
+
+- __Validator__
+  - The [pep8ci](https://pep8ci.herokuapp.com/) gave no errors in my code.
+
+- __Github errors__
+  - I changed the Linter in github after reading a tip in the project-portfolio-3 channel in Slack:
+    - Searching "Python: Select Linter" in the Command Palette.
+    - Chose the Flake8 linter.
+  - This way I didn't get errors for not having uppercase variables.
+  - There are no errors or warnings in my run.py file.
+
+### Bugs
+
+#### Fixed Bugs
+
+- Fixed a bug where board_size was called before being referenced.
+- Fixed a bug where num_ships was called before being referenced.
+- 
+
+#### Unfixed Bugs
+
+- Some ships have the same generated coordinates.
+- The game sometimes ends to quickly; before the attempts are less than the amount of ships left.
+- The print commands do not line up neat in relation to the board. (not really a bug, more a personal flaw)
+
+
+## Credits
+
+- Changing the pylint in github [tip](https://code-institute-room.slack.com/archives/C027C3S3TEU/p1631013285037400?thread_ts=1631012358.036500&cid=C027C3S3TEU)
 
