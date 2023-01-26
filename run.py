@@ -50,6 +50,7 @@ def welcome_message():
     print(" Insert the coordinates you think an enemy ship is hiding.")
 
 
+# I saw AVTpepper use this, but I didn't know why untill testing
 def justifying_board_size():
     """
     This function is needed to stop the board from multiplying during the game
@@ -59,6 +60,7 @@ def justifying_board_size():
     return board_size
 
 
+# This function is based on the code AVTpepper
 def build_board():
     """
     Creates the board and prints it.
@@ -76,6 +78,7 @@ def build_board():
         row_number += 1
 
 
+# This function is inspired by the code AVTpepper
 def build_ship():
     """
     The ships will be made here.
@@ -93,6 +96,7 @@ def build_ship():
         ships_build += 1
 
 
+# This function is mostly based on the code AVTpepper
 def making_guesses():
     """
     This function will take input from the user.
@@ -181,6 +185,10 @@ def making_guesses():
 
 
 def main():
+    """
+    This is the main function.
+    It calls all the necessary functions to play the game
+    """
     choose_difficulty()
     os.system('clear')
     welcome_message()
