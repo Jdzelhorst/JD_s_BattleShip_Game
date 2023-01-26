@@ -109,11 +109,11 @@ def making_guesses():
     for attempts in range((num_ships * 2)):
         shots = int((num_ships * 2))
         print(" ")
-        print(f"           You have {shots - attempts} attempts left")
-        print(f"           There are {len(ship_placement)} ships left ")
+        print(f"            You have {shots - attempts} attempts left")
+        print(f"            There are {len(ship_placement)} ships left ")
         guess_row = None
         while True:
-            guess_row = input("            Enter a row number: \n")
+            guess_row = input("             Enter a row number: \n")
             if guess_row.isdigit():
                 guess_row = int(guess_row)
                 break
@@ -123,7 +123,7 @@ def making_guesses():
                 continue
         guess_col = None
         while True:
-            guess_col = input("            Enter column letter: \n")
+            guess_col = input("             Enter column letter: \n")
             if guess_col.isalpha() and len(guess_col) == 1:
                 guess_col = guess_col.lower()
                 guess_col = ord(guess_col) - 96
@@ -144,8 +144,8 @@ def making_guesses():
         elif (attempts + 1) - shots == 0:
             os.system('clear')
             print("*******************************************************")
-            print("              You are out of ammo!")
-            print("                  Game Over...")
+            print("             You are out of ammo!")
+            print("                Game Over...")
             print("_______________________________________________________")
         elif (guess_row < 1 or guess_row > board_size):
             os.system('clear')
@@ -170,7 +170,7 @@ def making_guesses():
         else:
             os.system('clear')
             print("*******************************************************")
-            print("               You missed! Try again!")
+            print("             You missed! Try again!")
             print("_______________________________________________________")
             board[guess_row - 1][guess_col - 1] = "-"
         if ships_hit == num_ships:
