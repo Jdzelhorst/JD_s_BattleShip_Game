@@ -23,7 +23,7 @@ def choose_difficulty():
     global board_size
     global num_ships
     while True:
-        difficulty = int(input("     What difficulty do you choose?(1-3): "))
+        difficulty = int(input("     What difficulty do you choose?(1-3): \n"))
         if difficulty == 1:
             board_size = int(3)
             num_ships = int(2)
@@ -113,7 +113,7 @@ def making_guesses():
         print(f"           There are {len(ship_placement)} ships left ")
         guess_row = None
         while True:
-            guess_row = input("            Enter a row number: ")
+            guess_row = input("            Enter a row number: \n")
             if guess_row.isdigit():
                 guess_row = int(guess_row)
                 break
@@ -123,7 +123,7 @@ def making_guesses():
                 continue
         guess_col = None
         while True:
-            guess_col = input("            Enter column letter: ")
+            guess_col = input("            Enter column letter: \n")
             if guess_col.isalpha() and len(guess_col) == 1:
                 guess_col = guess_col.lower()
                 guess_col = ord(guess_col) - 96
@@ -206,7 +206,7 @@ def restart_game():
     print(" ")
     print("           The Game is over!")
     while True:
-        play_again = input("     Do you want to play again? y/n: ")
+        play_again = input("     Do you want to play again? y/n: \n")
         if play_again == "y":
             # The code below was taken from Stackoverflow.
             # See the readme for more information.
