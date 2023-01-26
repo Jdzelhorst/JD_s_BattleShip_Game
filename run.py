@@ -100,7 +100,7 @@ def build_ship():
         ships_build += 1
 
 
-# This function is mostly based on the code AVTpepper
+# This function is inspired by the code AVTpepper
 def making_guesses():
     """
     This function will take input from the user.
