@@ -107,9 +107,9 @@ def making_guesses():
     global attempts
     ships_hit = 0
     for attempts in range((num_ships * 2.5)):
-        shots = int((num_ships * 2))
+        tries = int((num_ships * 2.5))
         print(" ")
-        print(f"            You have {shots - attempts} attempts left")
+        print(f"            You have {tries - attempts} attempts left")
         print(f"            There are {len(ship_placement)} ships left ")
         guess_row = None
         while True:
@@ -141,7 +141,7 @@ def making_guesses():
             board[guess_row - 1][guess_col - 1] = "X"
             ship_placement.remove(guess)
             ships_hit += 1
-        elif (attempts + 1) - shots == 0:
+        elif (attempts + 1) - tries == 0:
             os.system('clear')
             print("*******************************************************")
             print("             You are out of ammo!")
