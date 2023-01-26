@@ -1,4 +1,8 @@
-# Imports
+"""
+Random was needed to create random integers
+Os was imported to clear the screen after an updated board
+Sys was imported to reset the system in the restart game function
+"""
 import random
 import os
 import sys

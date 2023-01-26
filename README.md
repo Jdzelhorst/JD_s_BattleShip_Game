@@ -175,4 +175,4 @@ Active [link](https://jd-battle-ship.herokuapp.com/)
   - Austin gave me a different view on the game, mostly how simple it could be.
 - Battleship Game Code in Python - by Panjal Dev [link](https://copyassignment.com/battleship-game-code-in-python/)
   - I tried the ship-class idea to make multiple ships, but couldn't get it to work
-- The [Stackoverflow](https://stackoverflow.com/questions/72831995/os-execvsys-executable-uses-wrong-python-version) tip I used to reset the game in the play again function
+- The [Stackoverflow](https://stackoverflow.com/questions/72831995/os-execvsys-executable-uses-wrong-python-version) tip I used to reset the game in the restart game function
